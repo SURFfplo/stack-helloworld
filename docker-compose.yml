@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   helloworld:
-    image: localhost:56001/helloworld:0.1
+    image: 192.87.106.18:56001/helloworld:0.1
     #image: helloworld:0.1
     labels: 
       MY_DLO_ENVIRONMENT: development
