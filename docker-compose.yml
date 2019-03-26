@@ -17,7 +17,7 @@ services:
       - dev-net
     volumes:
       #- $PWD/htdocs:/usr/local/apache2/htdocs/
-      - /mnt/nfs/nfsdlo/dev-net/helloword:0.1/htdocs:/usr/local/apache2/htdocs/
+      - /mnt/nfs/nfsdlo/dev-net/helloword-0.1/htdocs:/usr/local/apache2/htdocs/
 
 networks:
   dev-net:
