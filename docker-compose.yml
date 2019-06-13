@@ -8,17 +8,22 @@ services:
       MY_DLO_PURPOSE: testing the swarm environment
     ports:
       # platform:56000+, dev:57000+, demo:58000+, pilot:59000+
-      - 57001:80
+      - $STACK_PORT:80
     deploy:
       replicas: 1
       restart_policy:
         condition: on-failure
     networks:
-      - dev-net
+      - $STACK_NETWORK
     volumes:
       #- $PWD/htdocs:/usr/local/apache2/htdocs/
-      - /mnt/nfs/nfsdlo/dev-net/helloword-0.1/htdocs:/usr/local/apache2/htdocs/
+      - /mnt/nfs/nfsdlo/$STACK_NETWORK/$STACK_SERVICE/$STACK_VERSION/htdocs:/usr/local/apache2/htdocs/
+
 
 networks:
   dev-net:
+    external: true
+  test-net:
+    external: true
+  exp-net:
     external: true
