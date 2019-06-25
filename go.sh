@@ -30,5 +30,5 @@ export STACK_PORT=$PORT
 ./prepare.sh
 
 # go
-docker stack deploy -c docker-compose.yml $STACK_SERVICE
+docker stack deploy --with-registry-auth -c docker-compose.yml $STACK_SERVICE
 
