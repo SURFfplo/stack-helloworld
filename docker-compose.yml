@@ -18,6 +18,9 @@ services:
           memory: 128M
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.labels.node04 == true
     networks:
       - $STACK_NETWORK
     volumes:
